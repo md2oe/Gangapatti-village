@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery - Gangapatti</title>
+  <style>
+    body { font-family: sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
+    h1 { text-align: center; padding: 20px; color: #007b5e; }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      height: 200px;
+      width: auto;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    #uploadForm {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #fileInput {
+      display: none;
+    }
+
+    .upload-btn {
+      background: #007b5e;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    /* Full screen image popup */
+    #popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    #popup img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>📸 Gangapatti Photo Gallery</h1>
+
+<div id="uploadForm">
+  <button class="upload-btn" onclick="askPassword()">Upload Photo</button>
+  <input type="file" id="fileInput" accept="image/*" onchange="previewAndUpload(event)">
+</div>
+
+<div class="gallery" id="gallery"></div>
+
+<!-- Image Popup -->
+<div id="popup" onclick="hidePopup()">
+  <img id="popupImg" src="" alt="Large View">
+</div>
+
+<script>
+  const password = "1234"; // Change this to your real password
+  let photos = [];
+
+  function askPassword() {
+    const userInput = prompt("Enter admin password:");
+    if (userInput === password) {
+      document.getElementById("fileInput").click();
+    } else {
+      alert("Wrong password!");
+    }
+  }
+
+  function previewAndUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const src = e.target.result;
+      photos.push(src);
+      displayPhotos();
+    }
+    reader.readAsDataURL(file);
+  }
+
+  function displayPhotos() {
+    const gallery = document.getElementById("gallery");
+    gallery.innerHTML = "";
+
+    photos.forEach((src, index) => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.onclick = () => showPopup(src);
+      gallery.appendChild(img);
+    });
+  }
+
+  function showPopup(src) {
+    document.getElementById("popupImg").src = src;
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function hidePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
