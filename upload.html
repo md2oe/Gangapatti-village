@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload Photo</title>
+</head>
+<body>
+
+<h2>🔒 Upload Photo (Admin Only)</h2>
+<form method="POST" action="upload.php" enctype="multipart/form-data" onsubmit="return checkPassword();">
+  <input type="file" name="photo" required><br><br>
+  <input type="password" id="adminpass" placeholder="Enter Admin Password" required>
+  <br><br>
+  <button type="submit">Upload</button>
+</form>
+
+<script>
+function checkPassword() {
+  const correctPassword = "1234"; // Change this password
+  const input = document.getElementById("adminpass").value;
+  if (input === correctPassword) {
+    return true;
+  } else {
+    alert("Wrong password!");
+    return false;
+  }
+}
+</script>
+
+</body>
+</html>
