@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gangapatti Village | गंगापट्टी गांव</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
+    header, footer { background: #007b5e; color: white; padding: 20px; text-align: center; }
+    nav { background: #004d3c; color: white; text-align: center; padding: 10px; }
+    nav a { color: white; text-decoration: none; margin: 0 15px; }
+    section { padding: 20px; background: white; margin: 10px; border-radius: 10px; }
+    h2 { color: #007b5e; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to Gangapatti Village</h1>
+  <h3>गंगापट्टी गांव में आपका स्वागत है</h3>
+</header>
+
+<nav>
+  <a href="#about">About / गांव के बारे में</a>
+  <a href="#gallery">Gallery / गैलरी</a>
+  <a href="#people">Important People / प्रमुख लोग</a>
+  <a href="#services">Services / सेवाएं</a>
+  <a href="#news">News / समाचार</a>
+  <a href="#projects">Projects / परियोजनाएं</a>
+  <a href="#contact">Contact / संपर्क</a>
+</nav>
+
+<section id="about">
+  <h2>About Gangapatti / गंगापट्टी के बारे में</h2>
+  <p>Gangapatti is a peaceful village located in Bihar. It is known for its rich culture and unity among residents.<br>गंगापट्टी बिहार का एक शांतिपूर्ण गांव है, जो अपनी समृद्ध संस्कृति और एकता के लिए जाना जाता है।</p>
+</section>>
+  
+</section>
+
+<section id="people">
+  <h2>Important People / प्रमुख लोग</h2>
+  <ul>
+    <li>Taiyyab saaheb – Village Leader / गांव के नेता</li>
+  </ul>
+</section>
+
+<section id="services">
+  <h2>Local Services / स्थानीय सेवाएं</h2>
+  <ul>
+    <li>Government School / सरकारी विद्यालय</li>
+  </ul>
+</section>
+
+<section id="news">
+  <h2>News & Events / समाचार और कार्यक्रम</h2>
+  <p>Stay tuned for updates. / ताज़ा जानकारी के लिए बने रहें।</p>
+</section>
+
+<section id="projects">
+  <h2>Development Projects / विकास परियोजनाएं</h2>
+  <p>Details coming soon. / विवरण जल्द ही आएगा।</p>
+</section>
+
+<section id="contact">
+  <h2>Contact / संपर्क करें</h2>
+  <p>For suggestions or contact, reach out via WhatsApp or Instagram.<br>सुझावों या संपर्क के लिए WhatsApp या Instagram के माध्यम से संपर्क करें।</p>
+</section>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gangapatti Gallery</title>
+  <style>
+    body { font-family: sans-serif; background: #f8f9fa; padding: 20px; text-align: center; }
+    h1 { color: #333; }
+    .gallery { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+    .photoBox { position: relative; margin: 10px; }
+    .photoBox img { width: 160px; height: auto; border-radius: 10px; box-shadow: 0 0 8px #aaa; }
+    .deleteBtn {
+      position: absolute; top: 5px; right: 5px;
+      background: red; color: white; border: none;
+      border-radius: 50%; width: 25px; height: 25px;
+      cursor: pointer; display: none;
+    }
+    #uploadSection, #uploadBtn { display: none; margin-top: 20px; }
+    .btn {
+      padding: 10px 20px; background: #2c3e50;
+      color: white; border: none; border-radius: 5px;
+      cursor: pointer; margin-top: 10px;
+    }
+    input[type="file"] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<!-- 📷 Gallery Section Styled Like Development Projects -->
+<section style="padding: 40px 20px; background-color: #f9f9f9;">
+  <h2 style="text-align: center; font-size: 28px; margin-bottom: 30px;">📷 Photo Gallery</h2>
+
+  <div style="max-width: 900px; margin: auto; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
+
+    <!-- Gallery Card -->
+    <div style="background: white; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 280px; text-align: center; padding: 30px;">
+      <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png" alt="Gallery" width="80" style="margin-bottom: 20px;">
+      <h3 style="margin-bottom: 10px;">View Photo Gallery</h3>
+      <p style="font-size: 14px; color: #555;">See village events, people, and special moments in photos.</p>
+      <button onclick="location.href='gallery.html'" style="
+        margin-top: 15px;
+        background-color: #2c3e50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+      ">📂 Open Gallery</button>
+    </div>
+
+  </div>
+</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gangapatti Photo Gallery</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      text-align: center;
+      padding: 50px;
+    }
+    #galleryContainer {
+      display: none;
+      margin-top: 30px;
+    }
+    .button {
+      background-color: #2c3e50;
+      color: white;
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .photo {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    #passwordBox {
+      display: none;
+      margin-top: 20px;
+    }
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gangapatti Photo Gallery</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      text-align: center;
+      padding: 30px;
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    .button {
+      background-color: #2c3e50;
+      color: white;
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 20px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 160px;
+      height: 120px;
+      object-fit: cover;
+      margin: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+    #passwordBox {
+      display: none;
+      margin-top: 20px;
+    }
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 200px;
+    }
+    #uploadBtn {
+      display: none;
+      margin-top: 20px;
+    }
+    #cornerLogin {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!
